@@ -1,4 +1,4 @@
-package com.example.dicky.project
+package com.example.smkcoding2
 
 import org.junit.Test
 

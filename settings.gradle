@@ -1,1 +1,2 @@
+rootProject.name='SmkCoding2'
 include ':app'
