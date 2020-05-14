@@ -1,4 +1,4 @@
-package com.example.smkcoding2
+package com.example.smkcoding2.HomeApi
 
 
 import com.google.gson.annotations.SerializedName

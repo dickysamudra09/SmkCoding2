@@ -1,4 +1,4 @@
-package com.example.smkcoding2
+package com.example.smkcoding2.HomeApi
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.fragment_home_item.*
-import com.example.smkcoding2.JobsHomeItem
 import com.example.smkcoding2.R
 
 class HomeJobsAdapter(private val context: Context, private val items: List<JobsHomeItem>, private val listener: (JobsHomeItem)->

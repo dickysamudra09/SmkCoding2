@@ -13,6 +13,8 @@ import com.example.smkcoding2.FunctionData.Data.httpClient
 import com.example.smkcoding2.FunctionData.Utils.dismissLoading
 import com.example.smkcoding2.FunctionData.Utils.showLoading
 import com.example.smkcoding2.FunctionData.Utils.showToast
+import com.example.smkcoding2.HomeApi.HomeJobsAdapter
+import com.example.smkcoding2.HomeApi.JobsHomeItem
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
