@@ -7,61 +7,100 @@
     <RelativeLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@color/colorHeadNews">
+        android:layout_height="wrap_content"
+        android:background="#03A9F4">
 
         <LinearLayout
+            android:id="@+id/headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/txCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Indonesia"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="#FFFF"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/headline"
             android:id="@+id/ttlData"
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/viewInfeksi"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="28dp"
-                android:layout_centerVertical="true"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="Infeksi"
-                android:textColor="#FFFF"
-                android:textAlignment="center"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp">
 
-            <TextView
-                android:id="@+id/viewSembuh"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="28dp"
-                android:layout_centerVertical="true"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="#FFFF"
-                android:text="Sembuh"
-                android:textAlignment="center"
-                android:layout_toRightOf="@id/viewInfeksi"/>
+                <TextView
+                    android:id="@+id/viewInfeksi"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="Infeksi"
+                    android:textColor="@color/colorInfection"
+                    android:textAlignment="center"/>
 
-            <TextView
-                android:id="@+id/viewMati"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="28dp"
-                android:layout_centerVertical="true"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="#FFFF"
-                android:text="Mati"
-                android:textAlignment="center"
-                android:layout_toRightOf="@id/viewSembuh"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:id="@+id/viewSembuh"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorRecovery"
+                    android:text="Sembuh"
+                    android:textAlignment="center"
+                    android:layout_toRightOf="@id/viewInfeksi"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:id="@+id/viewMati"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDeath"
+                    android:text="Mati"
+                    android:textAlignment="center"
+                    android:layout_toRightOf="@id/viewSembuh"/>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_below="@id/ttlData"
+            android:id="@+id/txTotal"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -69,7 +108,6 @@
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="28dp"
                 android:text="Infeksi"
                 android:textStyle="bold"
                 android:textColor="#FFFF"
@@ -80,7 +118,6 @@
                 android:id="@+id/txDua"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="28dp"
                 android:layout_centerVertical="true"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -92,12 +129,11 @@
                 android:id="@+id/txTiga"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="28dp"
                 android:layout_centerVertical="true"
                 android:textStyle="bold"
                 android:textColor="#FFFF"
                 android:textSize="18dp"
-                android:text="Death"
+                android:text="Mati"
                 android:textAlignment="center"/>
         </LinearLayout>
 

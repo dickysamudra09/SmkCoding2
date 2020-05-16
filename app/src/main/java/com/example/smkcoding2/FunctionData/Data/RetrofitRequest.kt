@@ -42,3 +42,36 @@ inline fun<reified T>apiRequestNews(okHttpClient: OkHttpClient): T{
     return retrofit.create(T::class.java)
 }
 
+inline fun<reified T>apiRequestWeb(okHttpClient: OkHttpClient): T{
+    val gson = GsonBuilder().create()
+
+    val retrofit = Retrofit.Builder()
+        .baseUrl("https://jobs.github.com/")
+        .client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .build()
+    return retrofit.create(T::class.java)
+}
+
+inline fun<reified T>apiRequestAndroid(okHttpClient: OkHttpClient): T{
+    val gson = GsonBuilder().create()
+
+    val retrofit = Retrofit.Builder()
+        .baseUrl("https://jobs.github.com/")
+        .client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .build()
+    return retrofit.create(T::class.java)
+}
+
+inline fun<reified T>apiRequestDataScience(okHttpClient: OkHttpClient): T{
+    val gson = GsonBuilder().create()
+
+    val retrofit = Retrofit.Builder()
+        .baseUrl("https://jobs.github.com/")
+        .client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .build()
+    return retrofit.create(T::class.java)
+}
+

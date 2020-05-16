@@ -1,15 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/newsLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal" >
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listNewsFragment"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"/>
+        android:orientation="vertical">
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/newsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listNewsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="80dp">
+
+            <Button
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:text="Web Developer"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textColor="#FFF"
+                android:background="@color/colorAccent">
+
+            </Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:text="Android Developer"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textColor="#FFF"
+                android:background="@color/colorRecovery">
+
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/card3"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:text="Data Science"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textColor="#FFF"
+                android:background="@color/colorInfection">
+
+            </Button>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

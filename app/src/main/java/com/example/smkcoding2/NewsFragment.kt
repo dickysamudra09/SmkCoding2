@@ -1,5 +1,6 @@
 package com.example.smkcoding2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,27 +9,25 @@ import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.smkcoding2.FunctionData.Data.HomeService
-import com.example.smkcoding2.FunctionData.Data.apiRequest
 import com.example.smkcoding2.FunctionData.Data.apiRequestNews
 import com.example.smkcoding2.FunctionData.Data.httpClient
 import com.example.smkcoding2.FunctionData.Utils.dismissLoading
 import com.example.smkcoding2.FunctionData.Utils.showLoading
 import com.example.smkcoding2.FunctionData.Utils.showToast
-import com.example.smkcoding2.HomeApi.HomeJobsAdapter
 import com.example.smkcoding2.NewsApi.CoronaApi.CoronaAdapter
-import com.example.smkcoding2.NewsApi.CoronaApi.CoronaApi
 import com.example.smkcoding2.NewsApi.CoronaApi.CoronaApiItem
 import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_news.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class NewsFragment : Fragment(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -41,7 +40,15 @@ class NewsFragment : Fragment(){
 
     override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        card1.setOnClickListener{goToActivity()}
+
         callApiGetNews()
+    }
+
+    private fun goToActivity() {
+        val i = Intent(this.activity, WebActivity::class.java)
+        (i)
     }
 
     private fun callApiGetNews(){
