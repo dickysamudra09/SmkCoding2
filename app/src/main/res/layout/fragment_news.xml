@@ -23,69 +23,53 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="80dp">
-
-            <Button
-                android:id="@+id/card1"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp"
-                android:text="Web Developer"
-                android:textAlignment="center"
-                android:textSize="25dp"
-                android:textColor="#FFF"
-                android:background="@color/colorAccent">
-
-            </Button>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp">
 
             <Button
-                android:id="@+id/card2"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp"
-                android:text="Android Developer"
-                android:textAlignment="center"
-                android:textSize="25dp"
-                android:textColor="#FFF"
-                android:background="@color/colorRecovery">
-
-            </Button>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+                android:id="@+id/btn1"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:text="Andoid"
+                android:layout_margin="10dp"/>
 
             <Button
-                android:id="@+id/card3"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp"
+                android:id="@+id/btn2"
+                android:layout_toRightOf="@id/btn1"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:text="Web"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_toRightOf="@id/btn2"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
                 android:text="Data Science"
-                android:textAlignment="center"
-                android:textSize="25dp"
-                android:textColor="#FFF"
-                android:background="@color/colorInfection">
+                android:layout_margin="10dp"/>
 
-            </Button>
-        </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/newslist"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listnews2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
     </LinearLayout>
