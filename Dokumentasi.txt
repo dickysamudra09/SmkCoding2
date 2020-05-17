@@ -22,5 +22,8 @@ Halaman project :
  - 3 fragment/viewpager
  - 5 recyclerview
 
+ *file apk ada di folder Apk pada repo
+  url : https://github.com/dickysamudra09/SmkCoding2/tree/master/Apk
+
 
 
