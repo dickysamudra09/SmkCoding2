@@ -12,7 +12,8 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
         when(position){
             0 -> { return HomeFragment() }
             1 -> { return NewsFragment() }
-            2 -> { return UserFragment() }
+            2 -> { return BeritaFragment()
+            }
             else -> {
                 return HomeFragment()
             }

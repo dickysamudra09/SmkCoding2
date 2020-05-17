@@ -4,43 +4,49 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.smkcoding2.R
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.fragment_home_item.*
-import kotlinx.android.synthetic.main.fragment_news_item.*
-import kotlinx.android.synthetic.main.fragment_news_item.imgJob
-import kotlinx.android.synthetic.main.fragment_news_item.txCompany
-import kotlinx.android.synthetic.main.fragment_news_item.txPosition
 
 
-class DataScienceAdapter(private val context: Context, private val items: List<DataScienceApiItem>, private val listener: (DataScienceApiItem)->
-Unit): RecyclerView.Adapter<DataScienceAdapter.ViewHolder>(){
+class DataScienceAdapter(val context: Context) : RecyclerView.Adapter<DataScienceAdapter.MyViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(context, LayoutInflater.from(context).inflate(
-        R.layout.fragment_news_item2, parent, false
-        )
-    )
+    var dataList: List<DataScienceApiItem> = listOf()
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_datascience_item, parent, false)
+        return MyViewHolder(view)
+    }
 
     override fun getItemCount(): Int {
-        return items.size
+        return dataList.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binditem(items.get(position), listener)
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+        holder.txPosition.text = dataList.get(position).title
+        holder.txCompany.text = dataList.get(position).company
+        Glide.with(context).load(dataList.get(position).companyLogo)
+            .apply(RequestOptions().centerCrop())
+            .into(holder.image)
     }
 
-    class ViewHolder(val context: Context, override val containerView: View):
-        RecyclerView.ViewHolder(containerView), LayoutContainer {
-        fun binditem(item: DataScienceApiItem, listener: (DataScienceApiItem) -> Unit){
-            txCompany.text = item.company
-            txPosition.text = item.title
+    fun setMovieListItems(movieList: List<DataScienceApiItem>) {
+        this.dataList = movieList;
+        notifyDataSetChanged()
+    }
 
-            Glide.with(context).load(item.companyLogo).into(imgJob)
+    class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
-            containerView.setOnClickListener{listener(item)}
-        }
+        val txPosition: TextView = itemView!!.findViewById(R.id.txPosition)
+        val txCompany: TextView = itemView!!.findViewById(R.id.txCompany)
+        val image: ImageView = itemView!!.findViewById(R.id.imgJob)
+
     }
 }

@@ -4,40 +4,46 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.smkcoding2.R
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.fragment_home_item.*
-import kotlinx.android.synthetic.main.fragment_news_item.*
-import kotlinx.android.synthetic.main.fragment_news_item.imgJob
-import kotlinx.android.synthetic.main.fragment_news_item.txCompany
-import kotlinx.android.synthetic.main.fragment_news_item.txPosition
 
-class AndroidAdapter(private val context: Context, private val items: List<AndroidApiItem>, private val listener: (AndroidApiItem)->
-Unit): RecyclerView.Adapter<AndroidAdapter.ViewHolder>(){
+class AndroidAdapter(val context: Context) : RecyclerView.Adapter<AndroidAdapter.MyViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(context, LayoutInflater.from(context).inflate(
-        R.layout.fragment_news_item2, parent, false
-        )
-    )
+    var androidList : List<AndroidApiItem> = listOf()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_android_item,parent,false)
+        return MyViewHolder(view)
+    }
 
     override fun getItemCount(): Int {
-        return items.size
+        return androidList.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binditem(items.get(position), listener)
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+        holder.txPosition.text = androidList.get(position).title
+        holder.txCompany.text = androidList.get(position).company
+        Glide.with(context).load(androidList.get(position).companyLogo)
+            .apply(RequestOptions().centerCrop())
+            .into(holder.image)
     }
 
-    class ViewHolder(val context: Context, override val containerView: View):
-        RecyclerView.ViewHolder(containerView), LayoutContainer {
-        fun binditem(item: AndroidApiItem, listener: (AndroidApiItem) -> Unit){
-            txCompany.text = item.company
-            txPosition.text = item.title
+    fun setMovieListItems(movieList: List<AndroidApiItem>){
+        this.androidList = movieList;
+        notifyDataSetChanged()
+    }
 
-            Glide.with(context).load(item.companyLogo).into(imgJob)
-            containerView.setOnClickListener{listener(item)}
-        }
+    class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
+
+        val txPosition: TextView = itemView!!.findViewById(R.id.txPosition)
+        val txCompany: TextView = itemView!!.findViewById(R.id.txCompany)
+        val image: ImageView = itemView!!.findViewById(R.id.imgJob)
+
     }
 }

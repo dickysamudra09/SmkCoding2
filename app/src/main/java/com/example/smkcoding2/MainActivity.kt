@@ -12,8 +12,7 @@ import kotlinx.android.synthetic.main.fragment_news.*
 
 class MainActivity : AppCompatActivity() {
 
-    val tabTeks = arrayOf("Home", "Category", "User")
-    val tabIcon = arrayOf(R.drawable.home, R.drawable.category, R.drawable.user1)
+    val tabIcon = arrayOf(R.drawable.home, R.drawable.category, R.drawable.ic_eye)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(this)
         viewPager.setAdapter(adapter);
         TabLayoutMediator(tabLayout, viewPager, TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-            tab.text = tabTeks[position]
             tab.icon = ResourcesCompat.getDrawable(resources,tabIcon[position],null)
 
             }).attach()

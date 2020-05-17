@@ -26,4 +26,6 @@
         <item>Laki - laki</item>
         <item>Perempuan</item>
     </string-array>
+
+    <string name="api_key">api_key_anda</string>
 </resources>

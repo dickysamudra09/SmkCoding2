@@ -1,0 +1,26 @@
+Aplikasi :
+
+ - Nama Aplikasi : ListJobs
+
+ - Tujuan dibuat : Untuk mempermudah masyarakat dalam mencari pekerjaan di bidang IT
+
+Fitur :
+ 
+ - Bisa melihat pekerjaan sesuai category
+ - Terdapat halaman untuk melihat berita
+
+Menu Halaman : 
+
+ - Home/Beranda
+ - Category
+ - Other
+
+Halaman project :
+
+ - 4 Activity	
+ - 7 endpoint	
+ - 3 fragment/viewpager
+ - 5 recyclerview
+
+
+

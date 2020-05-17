@@ -35,7 +35,7 @@ inline fun<reified T>apiRequestNews(okHttpClient: OkHttpClient): T{
     val gson = GsonBuilder().create()
 
     val retrofit = Retrofit.Builder()
-        .baseUrl("https://covid19.mathdro.id/api/countries/Indonesia/")
+        .baseUrl("https://covid19.mathdro.id/api/countries/indonesia/")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
@@ -75,3 +75,13 @@ inline fun<reified T>apiRequestDataScience(okHttpClient: OkHttpClient): T{
     return retrofit.create(T::class.java)
 }
 
+object DataRepository {
+
+    fun create(): HomeService {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://jobs.github.com/")
+            .build()
+        return retrofit.create(HomeService::class.java)
+    }
+}

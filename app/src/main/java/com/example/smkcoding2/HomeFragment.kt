@@ -40,6 +40,7 @@ class HomeFragment : Fragment(){
         callApiGetJobsHome()
     }
 
+
     private fun callApiGetJobsHome(){
         showLoading(context!!, swipeRefreshLayout)
 

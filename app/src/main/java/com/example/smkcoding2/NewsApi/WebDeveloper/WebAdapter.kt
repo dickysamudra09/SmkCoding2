@@ -4,40 +4,46 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.smkcoding2.R
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.fragment_home_item.*
-import kotlinx.android.synthetic.main.fragment_news_item.*
-import kotlinx.android.synthetic.main.fragment_news_item.imgJob
-import kotlinx.android.synthetic.main.fragment_news_item.txCompany
-import kotlinx.android.synthetic.main.fragment_news_item.txPosition
 
-class WebAdapter(private val context: Context, private val items: List<WebApiItem>, private val listener: (WebApiItem)->
-Unit): RecyclerView.Adapter<WebAdapter.ViewHolder>(){
+class WebAdapter(val context: Context) : RecyclerView.Adapter<WebAdapter.MyViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(context, LayoutInflater.from(context).inflate(
-        R.layout.fragment_news_item2, parent, false
-        )
-    )
+    var webList: List<WebApiItem> = listOf()
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binditem(items.get(position), listener)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_web_item, parent, false)
+        return MyViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return webList.size
     }
 
-    class ViewHolder(val context: Context, override val containerView: View):
-        RecyclerView.ViewHolder(containerView), LayoutContainer {
-        fun binditem(item: WebApiItem, listener: (WebApiItem) -> Unit){
-            txCompany.text = item.company
-            txPosition.text = item.title
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-            Glide.with(context).load(item.companyLogo).into(imgJob)
-            containerView.setOnClickListener{listener(item)}
-        }
+        holder.txPosition.text = webList.get(position).title
+        holder.txCompany.text = webList.get(position).company
+        Glide.with(context).load(webList.get(position).companyLogo)
+            .apply(RequestOptions().centerCrop())
+            .into(holder.image)
+    }
+
+    fun setMovieListItems(movieList: List<WebApiItem>) {
+        this.webList = movieList;
+        notifyDataSetChanged()
+    }
+
+    class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
+
+        val txPosition: TextView = itemView!!.findViewById(R.id.txPosition)
+        val txCompany: TextView = itemView!!.findViewById(R.id.txCompany)
+        val image: ImageView = itemView!!.findViewById(R.id.imgJob)
+
     }
 }

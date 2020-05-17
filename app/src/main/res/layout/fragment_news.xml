@@ -2,81 +2,72 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/newsLayout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="200dp"
+            android:background="@color/colorAccent"
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listNewsFragment"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_margin="10dp" />
+                android:background="@drawable/ic_work_black_24dp"
+                android:layout_marginLeft="130dp"
+                android:layout_gravity="center_vertical" />
 
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ListJobs"
+                android:textColor="#FFF"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
 
-        <RelativeLayout
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp">
-
+            android:orientation="vertical">
             <Button
-                android:id="@+id/btn1"
-                android:layout_width="90dp"
-                android:layout_height="60dp"
-                android:text="Andoid"
-                android:layout_margin="10dp"
-                android:textColor="#FFF"
-                android:background="@color/colorAccent"/>
-
-            <Button
-                android:id="@+id/btn2"
-                android:layout_toRightOf="@id/btn1"
-                android:layout_width="90dp"
-                android:layout_height="60dp"
-                android:text="Web"
-                android:layout_margin="10dp"
-                android:textColor="#FFF"
-                android:background="@color/colorAccent"/>
-
-            <Button
-                android:id="@+id/btn3"
-                android:layout_toRightOf="@id/btn2"
-                android:layout_width="90dp"
-                android:layout_height="60dp"
-                android:text="Data Science"
-                android:layout_margin="10dp"
-                android:textColor="#FFF"
-                android:background="@color/colorAccent"/>
-
-        </RelativeLayout>
-
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/newslist"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listnews2"
+                android:id="@+id/btnAndroid"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="10dp" />
+                android:layout_height="130dp"
+                android:layout_margin="20dp"
+                android:text="Android Developer"
+                android:textColor="#FFF"
+                android:textSize="20dp"
+                android:background="@color/colorAccent"/>
 
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            <Button
+                android:id="@+id/btnWeb"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="20dp"
+                android:text="Web Developer"
+                android:textColor="#FFF"
+                android:textSize="20dp"
+                android:background="@color/colorAccent"/>
 
+            <Button
+                android:id="@+id/btnDataScience"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="20dp"
+                android:text="Data Science Developer"
+                android:textColor="#FFF"
+                android:textSize="20dp"
+                android:background="@color/colorAccent"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
