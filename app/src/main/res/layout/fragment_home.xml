@@ -10,10 +10,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@color/colorAccent"/>
+            android:background="@color/colorAccent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/user"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:layout_margin="20dp"
+                android:textSize="20dp"
+                android:textColor="#FFF"/>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"

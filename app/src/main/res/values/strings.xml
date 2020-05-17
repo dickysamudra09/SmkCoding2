@@ -9,4 +9,21 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="profileTitle">Biodata</string>
+    <string name="title_biodata">Biodata Form</string>
+    <string name="edit_biodata">Edit Biodata</string>
+    <string name="form_name">Nama</string>
+    <string name="form_jenisKelamin">Pilih Jenis Kelamin</string>
+    <string name="form_umur">Umur</string>
+    <string name="form_email">Email</string>
+    <string name="form_telp">No.Telpon</string>
+    <string name="form_alamat">Alamat</string>
+    <string name="btn_simpan">Simpan</string>
+    <string name="btn_edit">Edit</string>
+
+    <string-array name="jenisKelamin">
+        <item>Laki - laki</item>
+        <item>Perempuan</item>
+    </string-array>
 </resources>

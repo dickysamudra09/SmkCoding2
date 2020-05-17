@@ -35,7 +35,9 @@
                 android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:text="Andoid"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:textColor="#FFF"
+                android:background="@color/colorAccent"/>
 
             <Button
                 android:id="@+id/btn2"
@@ -43,7 +45,9 @@
                 android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:text="Web"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:textColor="#FFF"
+                android:background="@color/colorAccent"/>
 
             <Button
                 android:id="@+id/btn3"
@@ -51,7 +55,9 @@
                 android:layout_width="90dp"
                 android:layout_height="60dp"
                 android:text="Data Science"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:textColor="#FFF"
+                android:background="@color/colorAccent"/>
 
         </RelativeLayout>
 

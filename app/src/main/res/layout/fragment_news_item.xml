@@ -8,7 +8,7 @@
         android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#03A9F4">
+        android:background="@color/colorAccent">
 
         <LinearLayout
             android:id="@+id/headline"
@@ -139,7 +139,7 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -173,6 +173,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.cardview.widget.CardView>

@@ -2,6 +2,7 @@ package com.example.smkcoding2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.tabs.TabLayoutMediator
@@ -11,11 +12,13 @@ import kotlinx.android.synthetic.main.fragment_news.*
 
 class MainActivity : AppCompatActivity() {
 
-    val tabTeks = arrayOf("Home", "News", "User")
-    val tabIcon = arrayOf(R.drawable.home, R.drawable.news, R.drawable.user)
+    val tabTeks = arrayOf("Home", "Category", "User")
+    val tabIcon = arrayOf(R.drawable.home, R.drawable.category, R.drawable.user1)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main)
 
         val adapter = ViewPagerAdapter(this)

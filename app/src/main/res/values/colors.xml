@@ -2,9 +2,14 @@
 <resources>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#2A3534</color>
     <color name="colorHeadNews">#CFCFCF</color>
     <color name="colorInfection">#3D53CA</color>
     <color name="colorRecovery">#00FF6A</color>
     <color name="colorDeath">#D80707</color>
+
+    <color name="fdForm">#FF0F0CE0</color>
+    <color name="lineAbout">#A0A0A0</color>
+    <color name="btnEdit">#03A9F4</color>
+    <color name="btnAbout">#3F3B3B</color>
 </resources>
